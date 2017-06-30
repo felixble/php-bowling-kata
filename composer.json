@@ -1,0 +1,23 @@
+{
+  "name": "hiorg/php-bowling-kata",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Felix Blechschmitt",
+      "email": "fblechschmitt@hiorg-server.de"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "scripts": {
+    "test": "phpunit --bootstrap "
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.2.*"
+  }
+}
