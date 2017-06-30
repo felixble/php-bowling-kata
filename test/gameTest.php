@@ -31,6 +31,13 @@ class GameTest extends TestCase {
         $this->assertEquals(16, $this->game->score());
     }
 
+    public function testAnotherSpare() {
+        $this->rollSpare(7);
+        $this->game->roll(3);
+        $this->rollMany(17, 0);
+        $this->assertEquals(16, $this->game->score());
+    }
+
     public function testOneStrike() {
         $this->rollStrike();
         $this->game->roll(3);
@@ -48,9 +55,9 @@ class GameTest extends TestCase {
         $this->game->roll(10);
     }
 
-    private function rollSpare() {
-        $this->game->roll(5);
-        $this->game->roll(5);
+    private function rollSpare($firstPins = 5) {
+        $this->game->roll($firstPins);
+        $this->game->roll(10 - $firstPins);
     }
 
     private function rollMany($n, $pins) {
